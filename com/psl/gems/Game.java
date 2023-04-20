@@ -8,14 +8,39 @@ public class Game {
     private List<Player> players;
     private packOfCards pack;
 
+    public Game(){
+        pack=new packOfCards();
+        players=new ArrayList<Player>();
+    }
+
     public Game(List<Player> players) {
         this.players = players;
         pack=new packOfCards();
         
     }
 
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
+
+    public packOfCards getPack() {
+        return pack;
+    }
+
+    public void setPack(packOfCards pack) {
+        this.pack = pack;
+    }
+
+    public void gameRegister(Player player) {
+        players.add(player);
+    }
+
     public void play() {
-        
+
         System.out.println("Shuffling the cards...");
         pack.shuffleCards();
         System.out.println("Each player will get 3 card...... ");

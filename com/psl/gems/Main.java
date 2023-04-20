@@ -8,17 +8,11 @@ public class Main {
     
     public static void main(String[] args) {
         
-        // packOfCards pack=new packOfCards();
-        // System.out.println("Displaying cards.....");
-        // pack.showCards();
-        // pack.shuffleCards();
-        // System.out.println("Displaying cards after shuffle 1.....");
-        // pack.showCards();
-        List<Player>players =new ArrayList<Player>();
-        players.add(new Player("Ramesh"));
-        players.add(new Player("Suresh"));
-        Game game =new Game(players);
+        Game game =new Game();
+        game.gameRegister(new Player("Ramesh"));
+        game.gameRegister(new Player("Suresh"));
         game.play();
-        FileWrite.writeHTMLOutput(players);
+        FileWrite.writeHTMLOutput(game.getPlayers() );
+        
     }
 }
